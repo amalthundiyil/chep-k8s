@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: python-print
+spec:
+  template:
+    spec:
+      containers:
+      - name: python-print
+        image: rootproject/root:6.32.02-ubuntu24.04
+        command: ["python", "-c", "print('Hello, World!')"]
+      restartPolicy: Never  
+  backoffLimit: 4 
+

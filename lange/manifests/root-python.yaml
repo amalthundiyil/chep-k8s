@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: root-python
+spec:
+  template:
+    spec:
+      containers:
+      - name: root-python
+        image: rootproject/root:6.32.02-ubuntu24.04
+        command: ["python", "-c", "import ROOT"]
+      restartPolicy: Never  
+  backoffLimit: 4 
+

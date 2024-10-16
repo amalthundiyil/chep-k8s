@@ -12,7 +12,6 @@ import (
         "k8s.io/client-go/tools/clientcmd"
 )
 
-// createPod creates a pod with the provided name, image, and command
 func createPod(clientset *kubernetes.Clientset, podName, image string, command []string) error {
         pod := &v1.Pod{
                 ObjectMeta: metav1.ObjectMeta{
@@ -39,25 +38,20 @@ func createPod(clientset *kubernetes.Clientset, podName, image string, command [
 }
 
 func main() {
-        // Specify the path to the k3s kubeconfig file
         kubeconfig := "/etc/rancher/k3s/k3s.yaml"
 
-        // Alternatively, if kubeconfig is in the default location (~/.kube/config), use this:
         // kubeconfig := filepath.Join(homedir.HomeDir(), ".kube", "config")
 
-        // Build the Kubernetes config
         config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
         if err != nil {
                 log.Fatalf("Error building kubeconfig: %s", err.Error())
         }
 
-        // Create a clientset to interact with the Kubernetes API
         clientset, err := kubernetes.NewForConfig(config)
         if err != nil {
                 log.Fatalf("Error creating Kubernetes client: %s", err.Error())
         }
 
-        // Define pod configurations
         pods := []struct {
                 name    string
                 image   string

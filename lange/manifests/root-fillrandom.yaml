@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: root-fillrandom
+spec:
+  template:
+    spec:
+      containers:
+      - name: root-fillrandom
+        image: rootproject/root:6.32.02-ubuntu24.04
+        command: ["python", "/opt/root/tutorials/pyroot/fillrandom.py"]
+      restartPolicy: Never  
+  backoffLimit: 4 
+

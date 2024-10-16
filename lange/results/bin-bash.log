@@ -1,0 +1,14 @@
+Job "bin-bash" with container "bin-bash"
+Created job "bin-bash".
+New pod added: bin-bash-94sxt 
+Pod scheduled on chep 1729095802226844576 lastTransition: 2024-10-16 16:23:22 +0000 UTC
+Job "bin-bash" with container "bin-bash"
+New pod added: bin-bash-94sxt 
+Job "bin-bash" with container "bin-bash"
+Created job "bin-bash".
+New pod added: bin-bash-vsnzc 
+Pod scheduled on chep 1729096009403895908 lastTransition: 2024-10-16 16:26:49 +0000 UTC
+Job "bin-bash" with container "bin-bash"
+Created job "bin-bash".
+New pod added: bin-bash-gr4zx 
+Pod scheduled on chep 1729096450280105264 lastTransition: 2024-10-16 16:34:10 +0000 UTC
