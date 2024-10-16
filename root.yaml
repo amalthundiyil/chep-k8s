@@ -9,7 +9,7 @@ spec:
         - name: root-container
           image: rootproject/root:6.32.02-ubuntu24.04
           command:
-            - /bin/sh
+            - /bin/bash
             - -c
             - |
               echo '#include <stdio.h>
