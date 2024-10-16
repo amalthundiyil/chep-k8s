@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: root-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: root-container
+          image: rootproject/root:6.32.02-ubuntu24.04
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo '#include <stdio.h>
+              int main() { printf("Hello World\\n"); return 0; }' > /tmp/main.c && \
+              root -l -q /tmp/main.c
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      restartPolicy: Never
+      volumes:
+        - name: tmp
+          emptyDir: {}
+

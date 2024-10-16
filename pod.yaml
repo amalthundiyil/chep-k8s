@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: root-pod
+spec:
+  containers:
+    - name: root-container
+      image: rootproject/root:6.32.02-ubuntu24.04
+      command: 
+        - /bin/sh
+        - -c
+        - |
+          echo '#include <stdio.h>
+          int main() { printf("Hello World\\n"); return 0; }' > /tmp/main.c && \
+          root -l -q /tmp/main.c
